@@ -6,7 +6,7 @@ formSearch.addEventListener("submit", (event) => {
   event.preventDefault();
   if (searchText.value) {
     const locationValue = searchText.value;
-    fetch(`http://localhost:3000/weather?location=${locationValue}`)
+    fetch(`/weather?location=${locationValue}`)
       .then((response) =>
         response.json().then((response) => {
           console.log(Object.keys(response).length);
