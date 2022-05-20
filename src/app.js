@@ -17,6 +17,7 @@ hbs.registerPartials(pathToPartials);
 
 app.get("/weather", (req, res) => {
   const location = req.query.location;
+
   return geocode(location).then((response) => {
     res.send(response);
   });
