@@ -7,7 +7,7 @@ const geocode = async (location) => {
     const {
       data: {
         location: { lat, lon, region },
-        current: { temperature, humidity, feelslike },
+        current: { temperature, humidity, feelslike, weather_icons },
       },
     } = await axios.get(baseURL, {
       params: {
@@ -15,7 +15,15 @@ const geocode = async (location) => {
         query: location,
       },
     });
-    return { lat, lon, temperature, humidity, feelslike, region };
+    return {
+      lat,
+      lon,
+      temperature,
+      humidity,
+      feelslike,
+      region,
+      weather_icons,
+    };
   } catch (error) {
     return error;
   }
